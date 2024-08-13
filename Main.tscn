@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://daotxsaae7a7l"]
+[gd_scene load_steps=3 format=3 uid="uid://daotxsaae7a7l"]
 
-[ext_resource type="Script" path="res://Main.cs" id="1_4kuxh"]
 [ext_resource type="PackedScene" uid="uid://c24vjym8to5ac" path="res://Objects/BaseCharacter/BaseCharacter.tscn" id="2_mpbih"]
 [ext_resource type="PackedScene" uid="uid://dhu7k7owfsno7" path="res://Objects/HandList/HandList.tscn" id="3_rt6cq"]
 
@@ -23,7 +22,6 @@ layout_mode = 2
 [node name="Character" type="HBoxContainer" parent="Margin/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-script = ExtResource("1_4kuxh")
 
 [node name="PlayerCharacter" parent="Margin/VBoxContainer/Character" instance=ExtResource("2_mpbih")]
 layout_mode = 2
