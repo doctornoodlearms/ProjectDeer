@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhu7k7owfsno7"]
+
+[ext_resource type="PackedScene" uid="uid://8y6src4wjb2p" path="res://Objects/BaseCard/BaseCard.tscn" id="1_augox"]
+
+[node name="HandList" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BaseCard" parent="." instance=ExtResource("1_augox")]
+layout_mode = 2
+size_flags_horizontal = 0

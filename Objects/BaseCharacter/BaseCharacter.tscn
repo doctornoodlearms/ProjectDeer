@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c24vjym8to5ac"]
+
+[ext_resource type="Texture2D" uid="uid://c3kfpgopoid0u" path="res://icon.svg" id="1_oim0q"]
+
+[node name="BaseCharacter" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CharacterDisplay" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CharacterStatus" type="VBoxContainer" parent="CharacterDisplay"]
+layout_mode = 2
+
+[node name="HealthBar" type="ProgressBar" parent="CharacterDisplay/CharacterStatus"]
+layout_mode = 2
+
+[node name="StatusEffects" type="HBoxContainer" parent="CharacterDisplay/CharacterStatus"]
+layout_mode = 2
+
+[node name="CharacterView" type="SubViewportContainer" parent="CharacterDisplay"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Viewport" type="SubViewport" parent="CharacterDisplay/CharacterView"]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Sprite" type="Sprite2D" parent="CharacterDisplay/CharacterView/Viewport"]
+texture = ExtResource("1_oim0q")
+centered = false
