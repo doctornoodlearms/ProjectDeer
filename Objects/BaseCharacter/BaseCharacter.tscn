@@ -23,6 +23,9 @@ layout_mode = 2
 
 [node name="HealthBar" type="ProgressBar" parent="CharacterDisplay/CharacterStatus"]
 layout_mode = 2
+min_value = 1.0
+max_value = 1.0
+value = 1.0
 
 [node name="StatusEffects" type="HBoxContainer" parent="CharacterDisplay/CharacterStatus"]
 layout_mode = 2
