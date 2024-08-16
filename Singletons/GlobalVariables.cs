@@ -67,6 +67,8 @@ public partial class GlobalVariables : Node {
 
 		enemyHealth = enemy.Health;
 		enemyMaxHealth = enemy.MaxHealth;
+
+		Logging.Print("Version " + (string)ProjectSettings.GetSetting("application/config/version"));
 	}
 
 	// Not sure where else to put this right now
