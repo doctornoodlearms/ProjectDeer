@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalVariables="*res://Singletons/GlobalVariables.cs"
+DeckController="*res://Singletons/DeckController.cs"
 
 [display]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Objects/BaseCardScene/BaseCardScene.cs" id="1_sks62"]
 [ext_resource type="Texture2D" uid="uid://c3kfpgopoid0u" path="res://icon.svg" id="1_tea2l"]
 
-[node name="BaseCard" type="PanelContainer"]
+[node name="BaseCard" type="PanelContainer" node_paths=PackedStringArray("nameNode", "costNode", "cardTextNode", "playCardNode")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,6 +11,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("1_sks62")
+nameNode = NodePath("Margin/Vbox/Head/Name")
+costNode = NodePath("Margin/Vbox/Head/Cost")
+cardTextNode = NodePath("Margin/Vbox/Description")
+playCardNode = NodePath("Margin/Vbox/Button")
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -60,3 +64,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
+
+[node name="Button" type="Button" parent="Margin/Vbox"]
+layout_mode = 2
+text = "Play Card"

@@ -53,7 +53,9 @@ public partial class GlobalVariables : Node {
 			EmitSignal(SignalName.EnemyMaxHealth_Updated, value);
 		}
 	}
+	public int PlayerCardCount { get; }
 
+	public static GlobalVariables Current;
 
 	public override void _Ready() {
 
@@ -69,6 +71,11 @@ public partial class GlobalVariables : Node {
 		enemyMaxHealth = enemy.MaxHealth;
 
 		Logging.Print("Version " + (string)ProjectSettings.GetSetting("application/config/version"));
+	}
+
+	public override void _EnterTree() {
+
+		Current = this;
 	}
 
 	// Not sure where else to put this right now
