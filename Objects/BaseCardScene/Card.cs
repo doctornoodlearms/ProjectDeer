@@ -2,7 +2,7 @@ using System;
 
 /// <summary>
 /// </summary>
-public struct Card {
+public class Card {
 
 	int cost;
 	int maxCost;
