@@ -19,7 +19,7 @@ public static class Definitions {
 		new Card(
 			cardName:"Test",
 			cardText:"Test",
-			cost:0,
+			cost:1,
 			imagePath:"Test",
 			effect:TestEffect,
 			discardEffect:DiscardTestEffect

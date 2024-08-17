@@ -27,6 +27,7 @@ public partial class Card : Resource {
 	public void Activate() {
 
 		ActivateEffect();
+		GlobalVariables.Current.PlayerEnergy -= Cost;
 	}
 	public void Discard() {
 
