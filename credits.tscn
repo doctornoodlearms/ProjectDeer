@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://credits.gd" id="1_leuca"]
 
-[node name="Credits" type="Control"]
-layout_mode = 3
+[node name="Credits" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11,45 +10,125 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_leuca")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Back" type="Button" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 30
+theme_override_constants/margin_left = 530
+theme_override_constants/margin_top = 155
+theme_override_constants/margin_right = 510
+theme_override_constants/margin_bottom = 270
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Jello" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/Jello"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 37
+text = "Joe Meaney"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Jello"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 37
+text = "Lead Programmer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MrBread" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/MrBread"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 37
+text = "Brett Pirro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/MrBread"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 37
+text = "System Designer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Evdawg" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/Evdawg"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 37
+text = "Evan LeBlanc"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Evdawg"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 37
+text = "UI Programmer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nicky" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/Nicky"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 37
+text = "Nick Velasquez"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="MarginContainer/VBoxContainer/Nicky"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 37
+text = "Artist"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 62
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_top = 710
+theme_override_constants/margin_right = 1420
+theme_override_constants/margin_bottom = 5
+
+[node name="Back" type="Button" parent="MarginContainer2/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 41
 text = "Back
 "
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/line_spacing = 13
-theme_override_constants/outline_size = 1
-theme_override_constants/caret_width = 11
-theme_override_font_sizes/font_size = 37
-text = "                                                                                                       
-
-
-                                                                                                                               Credits
-
-
-                                                         Joe Meaney: Lead Programmer                                       Brett Pirro: Core Programmer
-
-                                                         Evan LeBlanc: UI Programmer                                         Nick Velasquez: Artist"
-editable = false
-context_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/MarginContainer3/Back" to="." method="_on_back_pressed"]
