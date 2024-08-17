@@ -1,4 +1,4 @@
-public partial class Nonsense : Button {
+public partial class DrawCardButton : Button {
 
 	public override void _Pressed() {
 
