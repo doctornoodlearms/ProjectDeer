@@ -3,12 +3,14 @@ using Godot.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 public partial class DeckController : Node
 {
 	private Godot.Collections.Dictionary<int, List<Card>> PlayerDecks;
 	private Godot.Collections.Dictionary<int, List<Card>> CurrentHand;
 
+	public static DeckController Current;
 
     public void Shuffle(int deck)
     {
@@ -29,14 +31,16 @@ public partial class DeckController : Node
 	}
 
 
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	public List<Card> ReturnPlayerCurrent(int index) 
 	{
+		return CurrentHand[index];
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+
+    public override void _Ready()
+    {
+        Current=this;
+    }
+
+
 }
