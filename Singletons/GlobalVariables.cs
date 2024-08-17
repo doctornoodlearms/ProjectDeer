@@ -16,11 +16,15 @@ public partial class GlobalVariables : Node {
 	[Signal] public delegate void PlayerMaxHealth_UpdatedEventHandler(int value);
 	[Signal] public delegate void EnemyHealth_UpdatedEventHandler(int value);
 	[Signal] public delegate void EnemyMaxHealth_UpdatedEventHandler(int value);
+	[Signal] public delegate void PlayerEnergy_UpdatedEventHandler(int valueDelta);
+	[Signal] public delegate void PlayerMaxEnergy_UpdatedEventHandler(int valueDelta);
 
 	int playerHealth;
 	int playerMaxHealth;
 	int enemyHealth;
 	int enemyMaxHealth;
+	int playerEnergy;
+	int playerMaxEnergy;
 
 	public int PlayerHealth {
 		get => playerHealth;
@@ -53,7 +57,11 @@ public partial class GlobalVariables : Node {
 			EmitSignal(SignalName.EnemyMaxHealth_Updated, value);
 		}
 	}
+	public int PlayerCardCount { get; }
+	public int PlayerEnergy { get => playerEnergy; set { int prevValue = playerEnergy; playerEnergy = value; EmitSignal(SignalName.PlayerEnergy_Updated, prevValue - value); } }
+	public int PlayerMaxEnergy { get => playerMaxEnergy; set { int prevValue = playerMaxEnergy; playerMaxEnergy = value; EmitSignal(SignalName.PlayerMaxEnergy_Updated, prevValue - value); } }
 
+	public static GlobalVariables Current;
 
 	public override void _Ready() {
 
@@ -69,6 +77,11 @@ public partial class GlobalVariables : Node {
 		enemyMaxHealth = enemy.MaxHealth;
 
 		Logging.Print("Version " + (string)ProjectSettings.GetSetting("application/config/version"));
+	}
+
+	public override void _EnterTree() {
+
+		Current = this;
 	}
 
 	// Not sure where else to put this right now
