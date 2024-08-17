@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# GD0301: The generic type argument must be a Variant compatible type: 'Card'
+dotnet_diagnostic.GD0301.severity = silent
