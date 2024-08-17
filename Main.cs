@@ -19,6 +19,10 @@ public partial class Main : Node {
 			globalVar.PlayerHealth -= 1;
 		};
 		AddChild(timer);
+
+		// Card Example
+		Card testCard = new Card("Test Card", 0, "", "Test Text", () => { GetNode<GlobalVariables>("/root/GlobalVariables").EnemyHealth -= 5; });
+		testCard.Activate();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

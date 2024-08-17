@@ -1,4 +1,4 @@
-public partial class BaseCard : Node {
+public partial class BaseCardScene : Node {
 
 	// TODO
 	// What the fuck should affinity be???
@@ -19,7 +19,6 @@ public partial class BaseCard : Node {
 
 
 	public override void _Ready() {
-
 
 	}
 

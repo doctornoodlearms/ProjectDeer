@@ -1,20 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://8y6src4wjb2p"]
 
+[ext_resource type="Script" path="res://Objects/BaseCardScene/BaseCardScene.cs" id="1_sks62"]
 [ext_resource type="Texture2D" uid="uid://c3kfpgopoid0u" path="res://icon.svg" id="1_tea2l"]
-[ext_resource type="Script" path="res://Objects/BaseCard/BaseCard.cs" id="1_vvrwr"]
 
-[node name="BaseCard" type="PanelContainer" node_paths=PackedStringArray("nameNode", "costNode", "imageNode", "cardTextNode")]
+[node name="BaseCard" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-script = ExtResource("1_vvrwr")
-nameNode = NodePath("Margin/Vbox/Head/Name")
-costNode = NodePath("Margin/Vbox/Head/Cost")
-imageNode = NodePath("Margin/Vbox/Image")
-cardTextNode = NodePath("Margin/Vbox/Description")
+script = ExtResource("1_sks62")
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 2
