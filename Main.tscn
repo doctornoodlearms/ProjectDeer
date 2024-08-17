@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://daotxsaae7a7l"]
+[gd_scene load_steps=8 format=3 uid="uid://daotxsaae7a7l"]
 
 [ext_resource type="Script" path="res://Main.cs" id="1_8erak"]
 [ext_resource type="Script" path="res://Objects/TestEnemy/TestEnemy.cs" id="2_k73g1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Objects/TestPlayer/TestPlayer.cs" id="2_ukmd0"]
 [ext_resource type="PackedScene" uid="uid://dhu7k7owfsno7" path="res://Objects/HandList/HandList.tscn" id="3_rt6cq"]
 [ext_resource type="Texture2D" uid="uid://c3kfpgopoid0u" path="res://icon.svg" id="4_fjxp0"]
+[ext_resource type="Script" path="res://Nonsense.cs" id="7_wl1hp"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_8erak")
@@ -46,3 +47,9 @@ Sprite = ExtResource("4_fjxp0")
 
 [node name="HandList" parent="Margin/VBoxContainer" instance=ExtResource("3_rt6cq")]
 layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Draw Card"
+script = ExtResource("7_wl1hp")

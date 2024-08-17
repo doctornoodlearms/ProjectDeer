@@ -2,28 +2,35 @@ using System;
 
 /// <summary>
 /// </summary>
-public class Card {
+public partial class Card : Resource {
 
-	int cost;
-	int maxCost;
-	string imageResourcePath;
-	string cardName;
-	string cardText;
+	public int Cost { get; }
+	public int MaxCost { get; }
+	public string ImageResourcePath { get; }
+	public string CardName { get; }
+	public string CardText { get; }
 
-	Action activateEffect;
+	Action ActivateEffect { get; }
+	Action DiscardEffect { get; }
 
-	public Card(string newName, int newCost, string newImagePath, string newText, Action newEffect) {
+	public Card(string cardName, string cardText, int cost, string imagePath, Action effect, Action discardEffect = null) {
 
-		cost = newCost;
-		maxCost = newCost;
-		imageResourcePath = newImagePath;
-		cardName = newName;
-		cardText = newText;
-		activateEffect = newEffect;
+		Cost = cost;
+		MaxCost = cost;
+		ImageResourcePath = imagePath;
+		CardName = cardName;
+		CardText = cardText;
+		ActivateEffect = effect;
+		DiscardEffect = discardEffect;
 	}
 
 	public void Activate() {
 
-		activateEffect();
+		ActivateEffect();
+	}
+	public void Discard() {
+
+		if (DiscardEffect == null) return;
+		DiscardEffect();
 	}
 }
