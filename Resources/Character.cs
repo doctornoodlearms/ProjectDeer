@@ -1,26 +1,22 @@
-public partial class Character : Resource
-{
-    //Values for each character
+using System.Threading.Channels;
+using Godot.Collections;
 
-    public int health{ get; set; }
-    public GlobalVariables.AffinityType affinity { get; set; }
-    public string playerDescription {  get; set; }
-    public int EnergyMax {  get; set; }
-    public string? PlayerImage { get; set; }
+public partial class Character : Resource {
+	//Values for each character
 
-    public Character(int Heath,GlobalVariables.AffinityType Affinity,string PlayerDescription,int energyMax,string playerImage) 
-    {
-        health = Heath;
-        affinity = Affinity;
-        playerDescription = PlayerDescription;
-        EnergyMax=energyMax;
-        PlayerImage = playerImage;
-    
-    }
+	public int Health { get; set; }
+	public GlobalVariables.AffinityType Affinity { get; set; }
+	public string PlayerDescription { get; set; }
+	public int EnergyMax { get; set; }
+	public string? PlayerImage { get; set; }
+	public Array<Card> cardList;
 
-
-
-    
-
-    
+	public Character(int health, string playerDescription, int energyMax, Array<Card> newCards, GlobalVariables.AffinityType affinity = GlobalVariables.AffinityType.AFFINITY_NONE, string playerImage = "") {
+		Health = health;
+		Affinity = affinity;
+		PlayerDescription = playerDescription;
+		EnergyMax = energyMax;
+		PlayerImage = playerImage;
+		cardList = newCards;
+	}
 }

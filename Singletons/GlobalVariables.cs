@@ -19,9 +19,9 @@ public partial class GlobalVariables : Node {
 	[Signal] public delegate void PlayerEnergy_UpdatedEventHandler(int valueDelta);
 	[Signal] public delegate void PlayerMaxEnergy_UpdatedEventHandler(int valueDelta);
 
-    public enum AffinityType { Cookie, Fish, Galaxy, Spirit, Crystal }
+	public enum AffinityType { AFFINITY_NONE, AFFINITY_CRYSTAL, AFFINITY_COOKIE, AFFINITY_GALAXY, AFFINITY_SPIRIT, AFFINITY_FISH }
 
-    int playerHealth;
+	int playerHealth;
 	int playerMaxHealth;
 	int enemyHealth;
 	int enemyMaxHealth;
