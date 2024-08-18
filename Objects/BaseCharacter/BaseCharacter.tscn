@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c3kfpgopoid0u" path="res://icon.svg" id="1_oim0q"]
 [ext_resource type="Script" path="res://Objects/BaseCharacter/BaseCharacter.cs" id="1_ubg4g"]
 
-[node name="BaseCharacter" type="CenterContainer" node_paths=PackedStringArray("healthNode", "spriteNode")]
+[node name="BaseCharacter" type="CenterContainer" node_paths=PackedStringArray("healthNode", "spriteNode", "currentBuffs")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,6 +14,7 @@ size_flags_vertical = 3
 script = ExtResource("1_ubg4g")
 healthNode = NodePath("CharacterDisplay/CharacterStatus/HealthBar")
 spriteNode = NodePath("CharacterDisplay/CharacterView/Viewport/Sprite")
+currentBuffs = NodePath("CharacterDisplay/CharacterStatus/StatusEffects")
 
 [node name="CharacterDisplay" type="VBoxContainer" parent="."]
 layout_mode = 2

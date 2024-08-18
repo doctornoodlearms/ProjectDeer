@@ -16,6 +16,7 @@ public static class Definitions {
 	}
 
 	public static List<Card> cookieList = new List<Card>() {
+
 		new Card(
 			cardName:"Test",
 			cardText:"Test",
@@ -25,4 +26,13 @@ public static class Definitions {
 			discardEffect:DiscardTestEffect
 		)
 	};
+
+	public static Buff cookieBuff = new Buff(
+
+		newId: "cookie.basebuff",
+		newName: "Base Buff",
+		newDescription: "Base Buff",
+		newStacks: 1,
+		newDecay: false
+	);
 }
