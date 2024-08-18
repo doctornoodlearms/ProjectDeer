@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck7nxw2egi1ao"]
+
+[ext_resource type="Script" path="res://Objects/BuffScene/BuffScene.cs" id="1_jrbx0"]
+
+[node name="BuffScene" type="VBoxContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "[Example Description]"
+script = ExtResource("1_jrbx0")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "[Example Name]"
+horizontal_alignment = 1
+
+[node name="Stacks" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "[Example Stacks]"
+horizontal_alignment = 1

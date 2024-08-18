@@ -42,6 +42,7 @@ Sprite = ExtResource("4_fjxp0")
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("2_k73g1")
+characterType = 1
 Health = 100
 MaxHealth = 100
 Sprite = ExtResource("4_fjxp0")
