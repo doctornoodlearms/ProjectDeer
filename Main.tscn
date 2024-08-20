@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://daotxsaae7a7l"]
+[gd_scene load_steps=10 format=3 uid="uid://daotxsaae7a7l"]
 
 [ext_resource type="Script" path="res://Main.cs" id="1_8erak"]
 [ext_resource type="Script" path="res://Objects/TestEnemy/TestEnemy.cs" id="2_k73g1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c3kfpgopoid0u" path="res://icon.svg" id="4_fjxp0"]
 [ext_resource type="Script" path="res://Interface/DrawCardButton.cs" id="7_w6plq"]
 [ext_resource type="Script" path="res://Interface/EnergyLabel.cs" id="8_61qdw"]
+[ext_resource type="Script" path="res://Interface/EndTurnButton.cs" id="9_vg6rf"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_8erak")
@@ -65,3 +66,8 @@ script = ExtResource("7_w6plq")
 layout_mode = 2
 text = "Energy: "
 script = ExtResource("8_61qdw")
+
+[node name="EndTurn" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "End Turn"
+script = ExtResource("9_vg6rf")

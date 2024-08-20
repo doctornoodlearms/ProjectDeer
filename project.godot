@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 GlobalVariables="*res://Singletons/GlobalVariables.cs"
 DeckController="*res://Singletons/DeckController.cs"
 BuffController="*res://Singletons/BuffController.cs"
+EnemyController="*res://Singletons/EnemyController.cs"
 
 [display]
 

@@ -64,12 +64,16 @@ public partial class BaseCharacter : Control {
 				BuffController.Current.PlayerBuff_Added += onBuffAdded;
 				BuffController.Current.PlayerBuff_Removed += onBuffRemoved;
 				BuffController.Current.PlayerBuff_StackUpdate += onBuffUpdate;
+				GlobalVariables.Current.PlayerHealth_Updated += (int value) => Health = value;
+				GlobalVariables.Current.PlayerMaxHealth_Updated += (int value) => MaxHealth = value;
 				break;
 
 			case CharacterType.CHARACTER_ENEMY:
 				BuffController.Current.EnemyBuff_Added += onBuffAdded;
 				BuffController.Current.EnemyBuff_Removed += onBuffRemoved;
 				BuffController.Current.EnemyBuff_StackUpdate += onBuffUpdate;
+				GlobalVariables.Current.EnemyHealth_Updated += (int value) => Health = value;
+				GlobalVariables.Current.EnemyMaxHealth_Updated += (int value) => MaxHealth = value;
 				break;
 		}
 	}

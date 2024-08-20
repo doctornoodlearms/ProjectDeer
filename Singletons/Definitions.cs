@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Godot.Collections;
 
 public static class Definitions {
@@ -14,6 +16,10 @@ public static class Definitions {
 
 		Logging.Print("Discarded");
 	}
+	static void EnemyEffect() {
+
+		GlobalVariables.Current.PlayerHealth -= 10;
+	}
 
 	public static List<Card> cookieList = new List<Card>() {
 
@@ -26,6 +32,10 @@ public static class Definitions {
 			discardEffect:DiscardTestEffect
 		)
 	};
+	public static List<Action> enemyList = new List<Action>() {
+
+		EnemyEffect
+	};
 
 	public static Buff cookieBuff = new Buff(
 
@@ -34,5 +44,11 @@ public static class Definitions {
 		newDescription: "Base Buff",
 		newStacks: 1,
 		newDecay: false
+	);
+
+	public static Enemy testEnemy = new Enemy(
+		name: "Test Enemy",
+		health: 100,
+		actions: enemyList
 	);
 }
