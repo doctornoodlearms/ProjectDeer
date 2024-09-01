@@ -1,3 +1,6 @@
+using System.Reflection.Metadata.Ecma335;
+
+
 ///<summary>
 /// Common variables used across the project
 ///</summary>
@@ -27,6 +30,15 @@ public partial class GlobalVariables : Node {
 	int enemyMaxHealth;
 	int playerEnergy;
 	int playerMaxEnergy;
+
+	///<surmmary>
+	///The character that the PLAYER is targeting
+	///<summary>
+	BaseCharacter playerTarget;
+	///<surmmary>
+	///The character that the ENEMY is targeting
+	///<summary>
+	BaseCharacter enemyTarget;
 
 	public int PlayerHealth {
 		get => playerHealth;
@@ -62,6 +74,8 @@ public partial class GlobalVariables : Node {
 	public int PlayerCardCount { get; }
 	public int PlayerEnergy { get => playerEnergy; set { int prevValue = playerEnergy; playerEnergy = value; EmitSignal(SignalName.PlayerEnergy_Updated, prevValue - value); } }
 	public int PlayerMaxEnergy { get => playerMaxEnergy; set { int prevValue = playerMaxEnergy; playerMaxEnergy = value; EmitSignal(SignalName.PlayerMaxEnergy_Updated, prevValue - value); } }
+	public BaseCharacter PlayerTarget { get => playerTarget; set => playerTarget = value; }
+	public BaseCharacter EnemyTarget { get => enemyTarget; set => enemyTarget = value; }
 
 	public static GlobalVariables Current;
 

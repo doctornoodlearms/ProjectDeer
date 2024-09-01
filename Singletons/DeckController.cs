@@ -35,6 +35,11 @@ public partial class DeckController : Node {
 		return newCardList;
 	}
 
+	public void SetDeck(List<Card> newDeck) {
+
+		CurrentDeck = newDeck;
+	}
+
 
 	public void DrawCard() {
 
@@ -49,6 +54,8 @@ public partial class DeckController : Node {
 		EmitSignal(SignalName.PlayerDrawCard, newCard);
 	}
 	public void QueueRemoveCard(int cardHandIndex) {
+
+		Logging.Print("Discarding: " + cardHandIndex);
 
 		EmitSignal(SignalName.PlayerDiscardCard, cardHandIndex);
 	}

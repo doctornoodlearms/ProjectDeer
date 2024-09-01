@@ -51,10 +51,8 @@ public partial class BaseCardScene : Node {
 	[Export] Label nameNode;
 	[Export] Label costNode;
 	[Export] TextureRect imageNode;
-	[Export] TextEdit cardTextNode;
+	[Export] RichTextLabel cardTextNode;
 	[Export] Button playCardNode;
-
-
 
 
 	public override void _Ready() {

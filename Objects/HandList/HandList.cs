@@ -20,9 +20,12 @@ public partial class HandList : Node {
 
 	public void RemoveCard(int cardHandIndex) {
 
+		Logging.Print("Removing Card: " + cardHandIndex);
+
 		foreach (BaseCardScene i in GetChildren()) {
 
 			if (i.CardHandIndex == cardHandIndex) i.Discard();
+			break;
 		}
 	}
 }

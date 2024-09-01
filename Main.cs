@@ -22,7 +22,7 @@ public partial class Main : Node {
 		GlobalVariables.Current.PlayerEnergy = 3;
 		GlobalVariables.Current.PlayerMaxEnergy = 3;
 
-		BuffController.Current.AddPlayerBuff(Definitions.cookieBuff);
+		DeckController.Current.SetDeck(Definitions.cookieList);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

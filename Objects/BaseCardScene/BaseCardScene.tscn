@@ -52,18 +52,13 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("1_tea2l")
 
-[node name="Description" type="TextEdit" parent="Margin/Vbox"]
+[node name="Description" type="RichTextLabel" parent="Margin/Vbox"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "[Base Description]"
-editable = false
-context_menu_enabled = false
 shortcut_keys_enabled = false
-selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
 
 [node name="Button" type="Button" parent="Margin/Vbox"]
 layout_mode = 2

@@ -16,16 +16,17 @@ public partial class BuffController : Node {
 	Array<Buff> playerBuffs = new Array<Buff>();
 	Array<Buff> enemyBuffs = new Array<Buff>();
 
-	public void AddPlayerBuff(Buff newBuff) {
+	public void AddPlayerBuff(Buff newBuff, int stackCount = 1) {
 
 		if (playerBuffs.Contains(newBuff)) {
 
 			int currentBuffIndex = playerBuffs.IndexOf(newBuff);
-			playerBuffs[currentBuffIndex].Stacks++;
+			playerBuffs[currentBuffIndex].Stacks += stackCount;
 			EmitSignal(SignalName.PlayerBuff_StackUpdate, playerBuffs[currentBuffIndex]);
 		}
 		else {
 
+			newBuff.Stacks = stackCount;
 			playerBuffs.Add(newBuff);
 			EmitSignal(SignalName.PlayerBuff_Added, newBuff);
 		}
